@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinidi Balasooriya | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Sinidi Balasooriya - software engineering undergraduate."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="scrollProgress" class="scroll-progress"></div>
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <div class="bg-orb orb-three" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#home" class="logo">SB</a>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero container reveal">
+        <div class="hero-top">
+          <p class="pill">Portfolio</p>
+          <h1>About me</h1>
+        </div>
+        <div class="hero-layout panel">
+          <div class="hero-content">
+            <p class="eyebrow">Software Engineering Undergraduate</p>
+            <h2 class="hero-title">Sinidi Balasooriya</h2>
+            <p class="hero-text" id="typewriterText">
+              Based in Malabe, Colombo and currently pursuing a Bachelor of
+              Computer Science in Software Engineering. Open to internships and
+              entry-level opportunities in software engineering and data-driven
+              systems.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary magnetic" href="#projects">My projects</a>
+              <a class="btn btn-ghost magnetic" href="#contact">Let's talk</a>
+            </div>
+          </div>
+          <figure class="hero-photo-wrap">
+            <img
+              class="hero-photo"
+              src="./assets/images/me.jpeg"
+              alt="Portrait of Sinidi Balasooriya"
+              loading="eager"
+            />
+          </figure>
+        </div>
+        <div class="stats-grid reveal">
+          <article class="stat-card">
+            <p class="stat-value" data-target="3" data-suffix="+">3+</p>
+            <p class="stat-label">Major Projects</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" data-target="15" data-suffix="+">15+</p>
+            <p class="stat-label">Technical Skills</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" data-target="100" data-suffix="%">100%</p>
+            <p class="stat-label">Team Collaboration</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" data-target="2024">2024</p>
+            <p class="stat-label">
+              Started Bachelor of Computer Science in Software Engineering
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section container reveal panel">
+        <p class="section-pill">Profile Summary</p>
+        <h2>Professional Summary</h2>
+        <p>
+          Computer Science undergraduate with practical experience in software
+          development, database management, and system testing. Proficient in
+          SQL, Python, and C++, with hands-on experience in application
+          development, data validation, and debugging. Experienced in working
+          with relational databases, designing test cases, and ensuring system
+          reliability. Strong analytical and problem-solving skills with the
+          ability to work in team-based development environments. Seeking
+          opportunities to develop skills in software engineering and
+          data-driven systems.
+        </p>
+      </section>
+
+      <section id="projects" class="section container reveal">
+        <div class="section-head">
+          <p class="section-pill">Services</p>
+          <h2>My software projects</h2>
+          <p>Practical work focused on functionality, testing, and reliability.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="card tilt-card">
+            <img
+              class="project-image zoomable-image"
+              src="./assets/images/kidora.png"
+              alt="Kidora parental control and monitoring system screenshot"
+              data-fallback-label="Kidora screenshot coming soon"
+              loading="lazy"
+            />
+            <h3>Parental Control &amp; Monitoring System (Kidora)</h3>
+            <p>
+              Team project with authentication, device linking, usage monitoring,
+              and restriction controls. Designed and executed test cases for
+              blocking and screen-time features, and documented defects for
+              debugging.
+            </p>
+            <p class="tech">Software Testing • Validation • Team Collaboration</p>
+            <div class="links">
+              <a href="#contact">Request Details</a>
+            </div>
+          </article>
+
+          <article class="card tilt-card">
+            <img
+              class="project-image zoomable-image"
+              src="./assets/images/word-puzzle.png"
+              alt="Mobile word puzzle application screenshot"
+              data-fallback-label="Word puzzle screenshot coming soon"
+              loading="lazy"
+            />
+            <h3>Mobile Word Puzzle Application</h3>
+            <p>
+              Built with Flutter, implementing game logic and user interaction.
+              Created and executed test cases for functionality, usability, and
+              performance, including exploratory testing and bug reporting.
+            </p>
+            <p class="tech">Flutter • Dart • Functional Testing</p>
+            <div class="links">
+              <a href="#contact">Request Details</a>
+            </div>
+          </article>
+
+          <article class="card tilt-card">
+            <img
+              class="project-image zoomable-image"
+              src="./assets/images/movie-db.png"
+              alt="Relational movie database system screenshot"
+              data-fallback-label="Movie database screenshot coming soon"
+              loading="lazy"
+            />
+            <h3>Relational Movie Database System</h3>
+            <p>
+              Designed and implemented relational tables using SQL. Wrote queries
+              to retrieve and manage structured data, and performed data
+              validation to improve consistency and accuracy.
+            </p>
+            <p class="tech">SQL • Relational Databases • Data Validation</p>
+            <div class="links">
+              <a href="#contact">Request Details</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section container reveal">
+        <div class="section-head">
+          <p class="section-pill">My Skills</p>
+          <h2>Tools & technologies I use</h2>
+        </div>
+        <ul class="skill-list logo-grid">
+          <li>Python</li>
+          <li>C++</li>
+          <li>Dart</li>
+          <li>Flutter</li>
+          <li>Node.js</li>
+          <li>SQL</li>
+          <li>Relational Databases</li>
+          <li>Data Validation</li>
+          <li>Debugging</li>
+          <li>Test Case Design</li>
+          <li>Functional Testing</li>
+          <li>Bug Tracking</li>
+          <li>Git</li>
+          <li>VS Code</li>
+          <li>Microsoft SQL Server</li>
+        </ul>
+      </section>
+
+      <section id="education" class="section container reveal">
+        <h2>Education</h2>
+        <div class="project-grid">
+          <article class="card">
+            <h3>Edith Cowan University</h3>
+            <p>Bachelor of Computer Science in Software Engineering</p>
+            <p class="tech">2024 - Present</p>
+          </article>
+          <article class="card">
+            <h3>Horizon College International</h3>
+            <p>Edexcel IAL, Mathematics Stream</p>
+            <p class="tech">2022</p>
+          </article>
+          <article class="card">
+            <h3>Horizon College International</h3>
+            <p>Edexcel IGCSE</p>
+            <p class="tech">2020</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section container contact reveal">
+        <h2>Contact</h2>
+        <p>
+          Open to software engineering internships and entry-level opportunities.
+          I would love to discuss how I can contribute to your team.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:sinidiyashara16@gmail.com">sinidiyashara16@gmail.com</a>
+          <a href="tel:+94726826616">+94 72 682 6616</a>
+          <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="#about">Malabe, Colombo</a>
+        </div>
+      </section>
+    </main>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      Top
+    </button>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button id="lightboxClose" class="lightbox-close" aria-label="Close image">
+        Close
+      </button>
+      <img id="lightboxImage" class="lightbox-image" src="" alt="" />
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <span id="year"></span> Sinidi Balasooriya. Built with focus on clarity and
+          performance.
+        </p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
