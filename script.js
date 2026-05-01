@@ -20,6 +20,8 @@ const projectsTrack = document.getElementById("projectsTrack");
 const projectsPrev = document.querySelector(".projects-nav.prev");
 const projectsNext = document.querySelector(".projects-nav.next");
 const projectForm = document.querySelector(".project-form");
+const contactForm = document.getElementById("contactForm");
+const contactStatus = document.getElementById("contactStatus");
 const customProjectsStorageKey = "customProjects";
 
 function makeFallbackImage(label) {
@@ -409,5 +411,43 @@ if (projectForm && projectsTrack) {
     refreshProjectsNavState();
     projectsTrack.scrollTo({ left: projectsTrack.scrollWidth, behavior: "smooth" });
     projectForm.reset();
+  });
+}
+
+if (contactForm && contactStatus) {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const endpoint = contactForm.getAttribute("action") || "";
+    if (endpoint.includes("your-form-id")) {
+      contactStatus.className = "form-status error";
+      contactStatus.textContent = "Set your Formspree form ID in the contact form action first.";
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+    contactStatus.className = "form-status";
+    contactStatus.textContent = "Sending message...";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      contactForm.reset();
+      contactStatus.className = "form-status success";
+      contactStatus.textContent = "Message sent successfully. Thank you!";
+    } catch {
+      contactStatus.className = "form-status error";
+      contactStatus.textContent = "Could not send message right now. Please try again.";
+    }
   });
 }
