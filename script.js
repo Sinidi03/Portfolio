@@ -12,6 +12,15 @@ const lightboxClose = document.getElementById("lightboxClose");
 const scrollProgress = document.getElementById("scrollProgress");
 const statValues = document.querySelectorAll(".stat-value[data-target]");
 const magneticButtons = document.querySelectorAll(".magnetic");
+const backgroundOrbs = document.querySelectorAll(".bg-orb");
+const skillsTrack = document.getElementById("skillsTrack");
+const skillsPrev = document.querySelector(".skills-nav.prev");
+const skillsNext = document.querySelector(".skills-nav.next");
+const projectsTrack = document.getElementById("projectsTrack");
+const projectsPrev = document.querySelector(".projects-nav.prev");
+const projectsNext = document.querySelector(".projects-nav.next");
+const projectForm = document.querySelector(".project-form");
+const customProjectsStorageKey = "customProjects";
 
 function makeFallbackImage(label) {
   const safeLabel = label.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -55,7 +64,10 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 
-revealItems.forEach((item) => revealObserver.observe(item));
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index * 0.06, 0.3)}s`;
+  revealObserver.observe(item);
+});
 
 const sectionObserver = new IntersectionObserver(
   (entries) => {
@@ -83,6 +95,14 @@ if (backToTop) {
       const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = pageHeight > 0 ? (window.scrollY / pageHeight) * 100 : 0;
       scrollProgress.style.width = `${progress}%`;
+    }
+
+    if (backgroundOrbs.length > 0) {
+      const y = window.scrollY;
+      backgroundOrbs.forEach((orb, index) => {
+        const speed = (index + 1) * 0.03;
+        orb.style.transform = `translate3d(0, ${-y * speed}px, 0)`;
+      });
     }
   });
 
@@ -128,8 +148,8 @@ tiltCards.forEach((card) => {
     const bounds = card.getBoundingClientRect();
     const offsetX = event.clientX - bounds.left;
     const offsetY = event.clientY - bounds.top;
-    const rotateY = ((offsetX / bounds.width) - 0.5) * 8;
-    const rotateX = (0.5 - (offsetY / bounds.height)) * 8;
+    const rotateY = ((offsetX / bounds.width) - 0.5) * 5;
+    const rotateX = (0.5 - (offsetY / bounds.height)) * 5;
     card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
@@ -194,10 +214,200 @@ magneticButtons.forEach((button) => {
     const rect = button.getBoundingClientRect();
     const offsetX = event.clientX - rect.left - rect.width / 2;
     const offsetY = event.clientY - rect.top - rect.height / 2;
-    button.style.transform = `translate(${offsetX * 0.1}px, ${offsetY * 0.1}px)`;
+    button.style.transform = `translate(${offsetX * 0.06}px, ${offsetY * 0.06}px)`;
   });
 
   button.addEventListener("mouseleave", () => {
     button.style.transform = "";
   });
 });
+
+if (skillsTrack && skillsPrev && skillsNext) {
+  const getScrollAmount = () => Math.max(180, Math.floor(skillsTrack.clientWidth * 0.75));
+
+  const updateSkillsNav = () => {
+    const maxScrollLeft = skillsTrack.scrollWidth - skillsTrack.clientWidth;
+    skillsPrev.disabled = skillsTrack.scrollLeft <= 2;
+    skillsNext.disabled = skillsTrack.scrollLeft >= maxScrollLeft - 2;
+  };
+
+  skillsPrev.addEventListener("click", () => {
+    skillsTrack.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+  });
+
+  skillsNext.addEventListener("click", () => {
+    skillsTrack.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+  });
+
+  skillsTrack.addEventListener("scroll", updateSkillsNav);
+  window.addEventListener("resize", updateSkillsNav);
+  updateSkillsNav();
+}
+
+let refreshProjectsNavState = () => {};
+
+if (projectsTrack && projectsPrev && projectsNext) {
+  const getScrollAmount = () => Math.max(260, Math.floor(projectsTrack.clientWidth * 0.85));
+
+  const updateProjectsNav = () => {
+    const maxScrollLeft = projectsTrack.scrollWidth - projectsTrack.clientWidth;
+    projectsPrev.disabled = projectsTrack.scrollLeft <= 2;
+    projectsNext.disabled = projectsTrack.scrollLeft >= maxScrollLeft - 2;
+  };
+  refreshProjectsNavState = updateProjectsNav;
+
+  projectsPrev.addEventListener("click", () => {
+    projectsTrack.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+  });
+
+  projectsNext.addEventListener("click", () => {
+    projectsTrack.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+  });
+
+  projectsTrack.addEventListener("scroll", updateProjectsNav);
+  window.addEventListener("resize", updateProjectsNav);
+  updateProjectsNav();
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let autoScrollTimer = null;
+    let isHoveringProjects = false;
+
+    const startAutoScroll = () => {
+      clearInterval(autoScrollTimer);
+      autoScrollTimer = setInterval(() => {
+        if (isHoveringProjects) {
+          return;
+        }
+        const maxScrollLeft = projectsTrack.scrollWidth - projectsTrack.clientWidth;
+        const atEnd = projectsTrack.scrollLeft >= maxScrollLeft - 4;
+        projectsTrack.scrollTo({
+          left: atEnd ? 0 : projectsTrack.scrollLeft + getScrollAmount(),
+          behavior: "smooth",
+        });
+      }, 4200);
+    };
+
+    projectsTrack.addEventListener("mouseenter", () => {
+      isHoveringProjects = true;
+    });
+    projectsTrack.addEventListener("mouseleave", () => {
+      isHoveringProjects = false;
+    });
+
+    startAutoScroll();
+  }
+}
+
+function getNextProjectIndex() {
+  if (!projectsTrack) {
+    return "01";
+  }
+  const count = projectsTrack.querySelectorAll(".project-showcase-card").length + 1;
+  return String(count).padStart(2, "0");
+}
+
+function createProjectCard(project) {
+  const card = document.createElement("article");
+  card.className = "project-showcase-card";
+
+  const chips = project.techList
+    .slice(0, 6)
+    .map((tech) => `<span>${tech}</span>`)
+    .join("");
+
+  const githubMarkup = project.github
+    ? `<p class="project-card-link"><a href="${project.github}" target="_blank" rel="noreferrer">View Repository</a></p>`
+    : "";
+
+  card.innerHTML = `
+    <p class="project-index">${project.index}</p>
+    <h3>${project.title}</h3>
+    <p>${project.description}</p>
+    <div class="project-chip-list">${chips}</div>
+    ${githubMarkup}
+  `;
+
+  return card;
+}
+
+function loadStoredProjects() {
+  if (!projectsTrack) {
+    return;
+  }
+
+  try {
+    const saved = localStorage.getItem(customProjectsStorageKey);
+    if (!saved) {
+      return;
+    }
+    const parsed = JSON.parse(saved);
+    if (!Array.isArray(parsed)) {
+      return;
+    }
+
+    parsed.forEach((project) => {
+      const index = getNextProjectIndex();
+      const card = createProjectCard({ ...project, index });
+      projectsTrack.append(card);
+    });
+
+    refreshProjectsNavState();
+  } catch {
+    // Ignore malformed localStorage content.
+  }
+}
+
+function saveProject(project) {
+  try {
+    const saved = localStorage.getItem(customProjectsStorageKey);
+    const parsed = saved ? JSON.parse(saved) : [];
+    const safeList = Array.isArray(parsed) ? parsed : [];
+    safeList.push(project);
+    localStorage.setItem(customProjectsStorageKey, JSON.stringify(safeList));
+  } catch {
+    // Ignore storage write issues.
+  }
+}
+
+loadStoredProjects();
+
+if (projectForm && projectsTrack) {
+  projectForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(projectForm);
+    const title = String(formData.get("projectTitle") || "").trim();
+    const description = String(formData.get("description") || "").trim();
+    const techRaw = String(formData.get("tech") || "").trim();
+    const github = String(formData.get("github") || "").trim();
+
+    if (!title || !description || !techRaw) {
+      return;
+    }
+
+    const techList = techRaw
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    if (techList.length === 0) {
+      return;
+    }
+
+    const project = {
+      title,
+      description,
+      techList,
+      github,
+    };
+
+    const index = getNextProjectIndex();
+    const card = createProjectCard({ ...project, index });
+    projectsTrack.append(card);
+    saveProject(project);
+
+    refreshProjectsNavState();
+    projectsTrack.scrollTo({ left: projectsTrack.scrollWidth, behavior: "smooth" });
+    projectForm.reset();
+  });
+}

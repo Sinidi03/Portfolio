@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sinidi Balasooriya | Portfolio</title>
+    <title>Sinidi Balasooriya | Software Engineering Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Sinidi Balasooriya - software engineering undergraduate."
+      content="Professional portfolio of Sinidi Balasooriya, software engineering undergraduate."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -24,46 +28,43 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#home" class="logo">SB</a>
+        <a href="#home" class="logo">
+          <span class="logo-mark">SB</span>
+          <span class="logo-text">Sinidi.</span>
+        </a>
         <nav class="nav">
-          <a href="#about">About</a>
+          <a href="#home">Home</a>
           <a href="#projects">Projects</a>
+          <a href="./assets/CV-Sinidi Balasooriya.pdf" download>Download Resume</a>
           <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
           <a href="#contact">Contact</a>
+          <a href="#add-project">Add Project</a>
         </nav>
       </div>
     </header>
 
     <main id="home">
       <section class="hero container reveal">
-        <div class="hero-top">
-          <p class="pill">Portfolio</p>
-          <h1>About me</h1>
-        </div>
         <div class="hero-layout panel">
           <div class="hero-content">
-            <p class="eyebrow">Software Engineering Undergraduate</p>
-            <h2 class="hero-title">Sinidi Balasooriya</h2>
+            <p class="pill availability-pill">Available for opportunities</p>
+            <h1>Hi, I'm <span class="accent-text">Sinidi Balasooriya</span></h1>
+            <h2 class="hero-title">Software Engineering Student</h2>
             <p class="hero-text" id="typewriterText">
-              Based in Malabe, Colombo and currently pursuing a Bachelor of
-              Computer Science in Software Engineering. Open to internships and
-              entry-level opportunities in software engineering and data-driven
-              systems.
+              I am currently pursuing a Bachelor of Computer Science in Software
+              Engineering and building practical experience in software
+              development, testing, and data-focused systems. I am open to
+              internships and entry-level opportunities where I can contribute
+              to real projects and continue to grow as an engineer.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary magnetic" href="#projects">My projects</a>
-              <a class="btn btn-ghost magnetic" href="#contact">Let's talk</a>
+              <a class="btn btn-primary magnetic" href="#projects">View My Work</a>
+              <a class="btn btn-ghost magnetic" href="#contact">Contact Me</a>
+              <a class="btn btn-ghost magnetic" href="./assets/CV-Sinidi Balasooriya.pdf" download>
+                Download Resume
+              </a>
             </div>
           </div>
-          <figure class="hero-photo-wrap">
-            <img
-              class="hero-photo"
-              src="./assets/images/me.jpeg"
-              alt="Portrait of Sinidi Balasooriya"
-              loading="eager"
-            />
-          </figure>
         </div>
         <div class="stats-grid reveal">
           <article class="stat-card">
@@ -76,160 +77,249 @@
           </article>
           <article class="stat-card">
             <p class="stat-value" data-target="100" data-suffix="%">100%</p>
-            <p class="stat-label">Team Collaboration</p>
+            <p class="stat-label">Commitment to Quality</p>
           </article>
           <article class="stat-card">
             <p class="stat-value" data-target="2024">2024</p>
-            <p class="stat-label">
-              Started Bachelor of Computer Science in Software Engineering
-            </p>
+            <p class="stat-label">Started BCS in Software Engineering</p>
           </article>
         </div>
       </section>
 
       <section id="about" class="section container reveal panel">
-        <p class="section-pill">Profile Summary</p>
+        <p class="section-pill">About</p>
         <h2>Professional Summary</h2>
-        <p>
-          Computer Science undergraduate with practical experience in software
-          development, database management, and system testing. Proficient in
-          SQL, Python, and C++, with hands-on experience in application
-          development, data validation, and debugging. Experienced in working
-          with relational databases, designing test cases, and ensuring system
-          reliability. Strong analytical and problem-solving skills with the
-          ability to work in team-based development environments. Seeking
-          opportunities to develop skills in software engineering and
-          data-driven systems.
+        <p class="about-lead">
+          Computer Science undergraduate with hands-on experience in software
+          development, databases, and testing workflows.
         </p>
+        <div class="about-highlights">
+          <article class="about-highlight-card">
+            <p class="about-highlight-title">Core Stack</p>
+            <p>Python, C++, Dart, SQL</p>
+          </article>
+          <article class="about-highlight-card">
+            <p class="about-highlight-title">Development</p>
+            <p>Application Development, Debugging, Problem Solving</p>
+          </article>
+          <article class="about-highlight-card">
+            <p class="about-highlight-title">QA Focus</p>
+            <p>Test Case Design, Functional Testing, Validation</p>
+          </article>
+          <article class="about-highlight-card">
+            <p class="about-highlight-title">Collaboration</p>
+            <p>Team-based delivery and reliable documentation</p>
+          </article>
+        </div>
+        <ul class="about-points">
+          <li>Built and tested real projects with structured workflows.</li>
+          <li>Worked with relational databases, joins, and data filtering.</li>
+          <li>Focused on reliability, clean implementation, and maintainability.</li>
+        </ul>
       </section>
 
       <section id="projects" class="section container reveal">
         <div class="section-head">
-          <p class="section-pill">Services</p>
-          <h2>My software projects</h2>
-          <p>Practical work focused on functionality, testing, and reliability.</p>
+          <p class="section-pill">Projects</p>
+          <h2>Featured Projects</h2>
+          <p>Real-world academic and team projects focused on implementation quality and testing.</p>
         </div>
-
-        <div class="project-grid">
-          <article class="card tilt-card">
-            <img
-              class="project-image zoomable-image"
-              src="./assets/images/kidora.png"
-              alt="Kidora parental control and monitoring system screenshot"
-              data-fallback-label="Kidora screenshot coming soon"
-              loading="lazy"
-            />
-            <h3>Parental Control &amp; Monitoring System (Kidora)</h3>
-            <p>
-              Team project with authentication, device linking, usage monitoring,
-              and restriction controls. Designed and executed test cases for
-              blocking and screen-time features, and documented defects for
-              debugging.
-            </p>
-            <p class="tech">Software Testing • Validation • Team Collaboration</p>
-            <div class="links">
-              <a href="#contact">Request Details</a>
-            </div>
-          </article>
-
-          <article class="card tilt-card">
-            <img
-              class="project-image zoomable-image"
-              src="./assets/images/word-puzzle.png"
-              alt="Mobile word puzzle application screenshot"
-              data-fallback-label="Word puzzle screenshot coming soon"
-              loading="lazy"
-            />
-            <h3>Mobile Word Puzzle Application</h3>
-            <p>
-              Built with Flutter, implementing game logic and user interaction.
-              Created and executed test cases for functionality, usability, and
-              performance, including exploratory testing and bug reporting.
-            </p>
-            <p class="tech">Flutter • Dart • Functional Testing</p>
-            <div class="links">
-              <a href="#contact">Request Details</a>
-            </div>
-          </article>
-
-          <article class="card tilt-card">
-            <img
-              class="project-image zoomable-image"
-              src="./assets/images/movie-db.png"
-              alt="Relational movie database system screenshot"
-              data-fallback-label="Movie database screenshot coming soon"
-              loading="lazy"
-            />
-            <h3>Relational Movie Database System</h3>
-            <p>
-              Designed and implemented relational tables using SQL. Wrote queries
-              to retrieve and manage structured data, and performed data
-              validation to improve consistency and accuracy.
-            </p>
-            <p class="tech">SQL • Relational Databases • Data Validation</p>
-            <div class="links">
-              <a href="#contact">Request Details</a>
-            </div>
-          </article>
+        <div class="projects-wrap">
+          <button class="projects-nav prev" type="button" aria-label="Scroll projects left">
+            &#10094;
+          </button>
+          <div class="projects-track" id="projectsTrack">
+            <article class="project-showcase-card">
+              <p class="project-index">01</p>
+              <h3>Parental Control &amp; Monitoring System</h3>
+              <p>
+                Team-built monitoring platform with authentication, device
+                linking, usage control, and test-driven validation workflows.
+              </p>
+              <div class="project-chip-list">
+                <span>MySQL</span><span>Python</span><span>Testing</span><span>Validation</span>
+              </div>
+            </article>
+            <article class="project-showcase-card">
+              <p class="project-index">02</p>
+              <h3>Mobile Word Puzzle Application</h3>
+              <p>
+                Flutter-based puzzle application focused on game logic, user
+                interaction, functionality testing, and bug tracking.
+              </p>
+              <div class="project-chip-list">
+                <span>Flutter</span><span>Dart</span><span>Functional Testing</span><span>UX</span>
+              </div>
+            </article>
+            <article class="project-showcase-card">
+              <p class="project-index">03</p>
+              <h3>Relational Movie Database System</h3>
+              <p>
+                SQL data management project with relational design, optimized
+                querying, filtering, and consistency validation.
+              </p>
+              <div class="project-chip-list">
+                <span>SQL</span><span>Joins</span><span>Data Filtering</span><span>DB Design</span>
+              </div>
+            </article>
+            <article class="project-showcase-card">
+              <p class="project-index">04</p>
+              <h3>Portfolio Website</h3>
+              <p>
+                Modern responsive personal portfolio with interactive sections,
+                grouped toolbox cards, and professional resume integration.
+              </p>
+              <div class="project-chip-list">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span>
+              </div>
+            </article>
+          </div>
+          <button class="projects-nav next" type="button" aria-label="Scroll projects right">
+            &#10095;
+          </button>
         </div>
       </section>
 
       <section id="skills" class="section container reveal">
         <div class="section-head">
-          <p class="section-pill">My Skills</p>
-          <h2>Tools & technologies I use</h2>
+          <p class="section-pill">Skills</p>
+          <h2>My Toolbox</h2>
+          <p>Technologies and tools I use to design, build, and test reliable software.</p>
         </div>
-        <ul class="skill-list logo-grid">
-          <li>Python</li>
-          <li>C++</li>
-          <li>Dart</li>
-          <li>Flutter</li>
-          <li>Node.js</li>
-          <li>SQL</li>
-          <li>Relational Databases</li>
-          <li>Data Validation</li>
-          <li>Debugging</li>
-          <li>Test Case Design</li>
-          <li>Functional Testing</li>
-          <li>Bug Tracking</li>
-          <li>Git</li>
-          <li>VS Code</li>
-          <li>Microsoft SQL Server</li>
-        </ul>
+        <div class="toolbox-grid">
+          <article class="toolbox-card">
+            <h3>Languages</h3>
+            <div class="toolbox-tags">
+              <span>Python</span>
+              <span>C++</span>
+              <span>Dart</span>
+              <span>JavaScript</span>
+            </div>
+          </article>
+          <article class="toolbox-card">
+            <h3>Web Development</h3>
+            <div class="toolbox-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Node.js</span>
+              <span>Flutter Web</span>
+            </div>
+          </article>
+          <article class="toolbox-card">
+            <h3>Databases</h3>
+            <div class="toolbox-tags">
+              <span>SQL</span>
+              <span>Relational Databases</span>
+              <span>Data Validation</span>
+              <span>Joins</span>
+            </div>
+          </article>
+          <article class="toolbox-card">
+            <h3>Tools</h3>
+            <div class="toolbox-tags">
+              <span>Git</span>
+              <span>VS Code</span>
+              <span>Microsoft SQL Server</span>
+              <span>Bug Tracking</span>
+            </div>
+          </article>
+          <article class="toolbox-card">
+            <h3>Testing &amp; QA</h3>
+            <div class="toolbox-tags">
+              <span>Functional Testing</span>
+              <span>Test Case Design</span>
+              <span>Validation</span>
+              <span>Debugging</span>
+            </div>
+          </article>
+          <article class="toolbox-card">
+            <h3>DSA &amp; Concepts</h3>
+            <div class="toolbox-tags">
+              <span>Arrays</span>
+              <span>Linked Lists</span>
+              <span>Stacks &amp; Queues</span>
+              <span>OOP</span>
+              <span>DBMS</span>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="education" class="section container reveal">
-        <h2>Education</h2>
-        <div class="project-grid">
-          <article class="card">
-            <h3>Edith Cowan University</h3>
-            <p>Bachelor of Computer Science in Software Engineering</p>
-            <p class="tech">2024 - Present</p>
-          </article>
-          <article class="card">
-            <h3>Horizon College International</h3>
-            <p>Edexcel IAL, Mathematics Stream</p>
-            <p class="tech">2022</p>
-          </article>
-          <article class="card">
-            <h3>Horizon College International</h3>
-            <p>Edexcel IGCSE</p>
-            <p class="tech">2020</p>
-          </article>
+      <section id="add-project" class="section container reveal">
+        <div class="add-project-wrap panel">
+          <h2>Add Project</h2>
+          <form class="project-form" action="#" method="post">
+            <label>
+              Project Title
+              <input type="text" name="projectTitle" placeholder="Enter project title" />
+            </label>
+            <label>
+              Description
+              <textarea name="description" rows="4" placeholder="Enter project description"></textarea>
+            </label>
+            <label>
+              Tech (comma separated)
+              <input type="text" name="tech" placeholder="React, Node, SQL" />
+            </label>
+            <label>
+              GitHub Link
+              <input type="url" name="github" placeholder="https://github.com/..." />
+            </label>
+            <label>
+              Image URL
+              <input type="url" name="imageUrl" placeholder="https://..." />
+            </label>
+            <button class="btn btn-primary" type="submit">Add Project</button>
+          </form>
         </div>
       </section>
 
       <section id="contact" class="section container contact reveal">
-        <h2>Contact</h2>
-        <p>
-          Open to software engineering internships and entry-level opportunities.
-          I would love to discuss how I can contribute to your team.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:sinidiyashara16@gmail.com">sinidiyashara16@gmail.com</a>
-          <a href="tel:+94726826616">+94 72 682 6616</a>
-          <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="#about">Malabe, Colombo</a>
+        <div class="section-head contact-head">
+          <p class="section-pill">Contact</p>
+          <h2>Get in <span class="accent-text">Touch</span></h2>
+          <p>Have a project in mind or want to connect? I'd love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+          <article class="card contact-form-card">
+            <h3>Send a Message</h3>
+            <form class="contact-form" action="#" method="post">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="your.email@example.com" />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="5" placeholder="Tell me about your project"></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </article>
+          <div class="contact-side">
+            <article class="card">
+              <h3>Contact Info</h3>
+              <p><a href="mailto:sinidiyashara16@gmail.com">sinidiyashara16@gmail.com</a></p>
+              <p><a href="tel:+94726826616">+94 72 682 6616</a></p>
+              <p>Malabe, Colombo</p>
+            </article>
+            <article class="card">
+              <h3>Social Links</h3>
+              <p>
+                <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" rel="noreferrer">
+                  LinkedIn
+                </a>
+              </p>
+              <p>
+                <a href="https://www.instagram.com/sinidibalasooriya/" target="_blank" rel="noreferrer">
+                  Instagram
+                </a>
+              </p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
