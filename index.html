@@ -4,48 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sinidi Balasooriya | Software Engineering Portfolio</title>
-    <meta
-      name="description"
-      content="Professional portfolio of Sinidi Balasooriya, software engineering undergraduate."
-    />
+    <meta name="description" content="Professional portfolio of Sinidi Balasooriya, software engineering undergraduate." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="scrollProgress" class="scroll-progress"></div>
-    <div class="bg-orb orb-one" aria-hidden="true"></div>
-    <div class="bg-orb orb-two" aria-hidden="true"></div>
-    <div class="bg-orb orb-three" aria-hidden="true"></div>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <div class="bg-mesh" aria-hidden="true"></div>
 
     <header class="site-header">
-      <div class="container header-inner">
-        <a href="#home" class="logo">
+      <div class="header-inner">
+        <a href="#home" class="logo magnetic">
           <span class="logo-mark">SB</span>
           <span class="logo-text">Sinidi.</span>
         </a>
         <nav class="nav">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="./assets/CV-Sinidi Balasooriya.pdf" download>Download Resume</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-          <a href="#add-project">Add Project</a>
+          <a href="#home" class="magnetic active">Home</a>
+          <a href="#about" class="magnetic">About</a>
+          <a href="#projects" class="magnetic">Projects</a>
+          <a href="#skills" class="magnetic">Skills</a>
+          <a href="#contact" class="magnetic">Contact</a>
         </nav>
       </div>
     </header>
 
     <main id="home">
       <section class="hero container reveal">
-        <div class="hero-layout panel">
+        <div class="hero-layout">
           <div class="hero-content">
             <p class="pill availability-pill">Available for opportunities</p>
             <h1>Hi, I'm <span class="accent-text">Sinidi Balasooriya</span></h1>
@@ -54,8 +43,7 @@
               I am currently pursuing a Bachelor of Computer Science in Software
               Engineering and building practical experience in software
               development, testing, and data-focused systems. I am open to
-              internships and entry-level opportunities where I can contribute
-              to real projects and continue to grow as an engineer.
+              internships and entry-level opportunities.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary magnetic" href="#projects">View My Work</a>
@@ -65,118 +53,96 @@
               </a>
             </div>
           </div>
-        </div>
-        <div class="stats-grid reveal">
-          <article class="stat-card">
-            <p class="stat-value" data-target="3" data-suffix="+">3+</p>
-            <p class="stat-label">Major Projects</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value" data-target="15" data-suffix="+">15+</p>
-            <p class="stat-label">Technical Skills</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value" data-target="100" data-suffix="%">100%</p>
-            <p class="stat-label">Commitment to Quality</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value" data-target="2024">2024</p>
-            <p class="stat-label">Started BCS in Software Engineering</p>
-          </article>
+          <div class="hero-graphics">
+             <div class="hero-card tilt-card">
+               <div class="hero-card-inner">
+                 <div class="devicon-container">
+                   <i class="devicon-python-plain colored"></i>
+                   <i class="devicon-cplusplus-plain colored"></i>
+                   <i class="devicon-dart-plain colored"></i>
+                   <i class="devicon-flutter-plain colored"></i>
+                 </div>
+                 <p class="hero-card-text">Building the future,<br>one line at a time.</p>
+               </div>
+             </div>
+          </div>
         </div>
       </section>
 
-      <section id="about" class="section container reveal panel">
-        <p class="section-pill">About</p>
-        <h2>Professional Summary</h2>
-        <p class="about-lead">
-          Computer Science undergraduate with hands-on experience in software
-          development, databases, and testing workflows.
-        </p>
-        <div class="about-highlights">
-          <article class="about-highlight-card">
-            <p class="about-highlight-title">Core Stack</p>
-            <p>Python, C++, Dart, SQL</p>
-          </article>
-          <article class="about-highlight-card">
-            <p class="about-highlight-title">Development</p>
-            <p>Application Development, Debugging, Problem Solving</p>
-          </article>
-          <article class="about-highlight-card">
-            <p class="about-highlight-title">QA Focus</p>
-            <p>Test Case Design, Functional Testing, Validation</p>
-          </article>
-          <article class="about-highlight-card">
-            <p class="about-highlight-title">Collaboration</p>
-            <p>Team-based delivery and reliable documentation</p>
-          </article>
+      <section id="about" class="section container reveal">
+        <div class="section-head">
+          <p class="section-pill">About</p>
+          <h2>Professional Summary</h2>
+          <p>Computer Science undergraduate with hands-on experience in software development.</p>
         </div>
-        <ul class="about-points">
-          <li>Built and tested real projects with structured workflows.</li>
-          <li>Worked with relational databases, joins, and data filtering.</li>
-          <li>Focused on reliability, clean implementation, and maintainability.</li>
-        </ul>
+        
+        <div class="bento-grid about-bento">
+          <div class="bento-item bento-large tilt-card">
+            <h3>Who I Am</h3>
+            <p>I am a passionate 22-year-old Computer Science undergraduate deeply interested in crafting scalable software solutions. My experience ranges from database management to front-end development and rigorous QA testing workflows. I enjoy building reliable, clean, and maintainable systems that solve real-world problems.</p>
+          </div>
+          <div class="bento-item tilt-card bento-accent">
+            <h3 class="accent-text highlight-num">2024</h3>
+            <p>Started BCS in Software Engineering</p>
+          </div>
+          <div class="bento-item tilt-card bento-accent">
+            <h3 class="accent-text highlight-num">100%</h3>
+            <p>Commitment to Quality & Clean Code</p>
+          </div>
+          <div class="bento-item bento-wide tilt-card">
+            <h3>Core Focus Areas</h3>
+            <div class="focus-tags">
+              <span>Python</span><span>C++</span><span>Dart</span><span>SQL</span>
+              <span>Debugging</span><span>Test Case Design</span><span>Validation</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="projects" class="section container reveal">
         <div class="section-head">
           <p class="section-pill">Projects</p>
-          <h2>Featured Projects</h2>
-          <p>Real-world academic and team projects focused on implementation quality and testing.</p>
+          <h2>Featured Work</h2>
+          <p>Real-world academic and team projects focused on implementation quality.</p>
         </div>
-        <div class="projects-wrap">
-          <button class="projects-nav prev" type="button" aria-label="Scroll projects left">
-            &#10094;
-          </button>
-          <div class="projects-track" id="projectsTrack">
-            <article class="project-showcase-card">
+        
+        <div class="projects-grid">
+            <article class="project-showcase-card tilt-card">
+              <div class="project-card-bg"></div>
               <p class="project-index">01</p>
-              <h3>Parental Control &amp; Monitoring System</h3>
-              <p>
-                Team-built monitoring platform with authentication, device
-                linking, usage control, and test-driven validation workflows.
-              </p>
+              <h3>Parental Control System</h3>
+              <p>Team-built monitoring platform with authentication, device linking, and usage control.</p>
               <div class="project-chip-list">
-                <span>MySQL</span><span>Python</span><span>Testing</span><span>Validation</span>
+                <span>MySQL</span><span>Python</span><span>Testing</span>
               </div>
             </article>
-            <article class="project-showcase-card">
+            <article class="project-showcase-card tilt-card">
+              <div class="project-card-bg"></div>
               <p class="project-index">02</p>
-              <h3>Mobile Word Puzzle Application</h3>
-              <p>
-                Flutter-based puzzle application focused on game logic, user
-                interaction, functionality testing, and bug tracking.
-              </p>
+              <h3>Word Puzzle App</h3>
+              <p>Flutter-based puzzle application focused on game logic and functionality testing.</p>
               <div class="project-chip-list">
-                <span>Flutter</span><span>Dart</span><span>Functional Testing</span><span>UX</span>
+                <span>Flutter</span><span>Dart</span><span>UX</span>
               </div>
             </article>
-            <article class="project-showcase-card">
+            <article class="project-showcase-card tilt-card">
+              <div class="project-card-bg"></div>
               <p class="project-index">03</p>
-              <h3>Relational Movie Database System</h3>
-              <p>
-                SQL data management project with relational design, optimized
-                querying, filtering, and consistency validation.
-              </p>
+              <h3>Movie Database</h3>
+              <p>SQL data management project with relational design and optimized querying.</p>
               <div class="project-chip-list">
-                <span>SQL</span><span>Joins</span><span>Data Filtering</span><span>DB Design</span>
+                <span>SQL</span><span>Joins</span><span>DB Design</span>
               </div>
             </article>
-            <article class="project-showcase-card">
+            <article class="project-showcase-card tilt-card">
+              <div class="project-card-bg"></div>
               <p class="project-index">04</p>
               <h3>Portfolio Website</h3>
-              <p>
-                Modern responsive personal portfolio with interactive sections,
-                grouped toolbox cards, and professional resume integration.
-              </p>
+              <p>Modern responsive personal portfolio with interactive bento sections.</p>
               <div class="project-chip-list">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span>
+                <span>HTML</span><span>CSS</span><span>JS</span>
               </div>
             </article>
-          </div>
-          <button class="projects-nav next" type="button" aria-label="Scroll projects right">
-            &#10095;
-          </button>
         </div>
       </section>
 
@@ -184,93 +150,34 @@
         <div class="section-head">
           <p class="section-pill">Skills</p>
           <h2>My Toolbox</h2>
-          <p>Technologies and tools I use to design, build, and test reliable software.</p>
+          <p>Technologies I use to build robust applications.</p>
         </div>
-        <div class="toolbox-grid">
-          <article class="toolbox-card">
+        
+        <div class="bento-grid skills-bento">
+          <div class="bento-item tilt-card">
             <h3>Languages</h3>
-            <div class="toolbox-tags">
-              <span>Python</span>
-              <span>C++</span>
-              <span>Dart</span>
-              <span>JavaScript</span>
+            <div class="bento-tags">
+              <span>Python</span><span>C++</span><span>Dart</span><span>JavaScript</span>
             </div>
-          </article>
-          <article class="toolbox-card">
-            <h3>Web Development</h3>
-            <div class="toolbox-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Node.js</span>
-              <span>Flutter Web</span>
+          </div>
+          <div class="bento-item tilt-card">
+            <h3>Web Dev</h3>
+            <div class="bento-tags">
+              <span>HTML5</span><span>CSS3</span><span>Node.js</span><span>Flutter Web</span>
             </div>
-          </article>
-          <article class="toolbox-card">
+          </div>
+          <div class="bento-item tilt-card">
             <h3>Databases</h3>
-            <div class="toolbox-tags">
-              <span>SQL</span>
-              <span>Relational Databases</span>
-              <span>Data Validation</span>
-              <span>Joins</span>
+            <div class="bento-tags">
+              <span>SQL Server</span><span>MySQL</span><span>Relational DBs</span><span>Joins</span>
             </div>
-          </article>
-          <article class="toolbox-card">
-            <h3>Tools</h3>
-            <div class="toolbox-tags">
-              <span>Git</span>
-              <span>VS Code</span>
-              <span>Microsoft SQL Server</span>
-              <span>Bug Tracking</span>
+          </div>
+          <div class="bento-item tilt-card">
+            <h3>Tools & QA</h3>
+            <div class="bento-tags">
+              <span>Git</span><span>VS Code</span><span>Functional Testing</span><span>Debugging</span>
             </div>
-          </article>
-          <article class="toolbox-card">
-            <h3>Testing &amp; QA</h3>
-            <div class="toolbox-tags">
-              <span>Functional Testing</span>
-              <span>Test Case Design</span>
-              <span>Validation</span>
-              <span>Debugging</span>
-            </div>
-          </article>
-          <article class="toolbox-card">
-            <h3>DSA &amp; Concepts</h3>
-            <div class="toolbox-tags">
-              <span>Arrays</span>
-              <span>Linked Lists</span>
-              <span>Stacks &amp; Queues</span>
-              <span>OOP</span>
-              <span>DBMS</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="add-project" class="section container reveal">
-        <div class="add-project-wrap panel">
-          <h2>Add Project</h2>
-          <form class="project-form" action="#" method="post">
-            <label>
-              Project Title
-              <input type="text" name="projectTitle" placeholder="Enter project title" />
-            </label>
-            <label>
-              Description
-              <textarea name="description" rows="4" placeholder="Enter project description"></textarea>
-            </label>
-            <label>
-              Tech (comma separated)
-              <input type="text" name="tech" placeholder="React, Node, SQL" />
-            </label>
-            <label>
-              GitHub Link
-              <input type="url" name="github" placeholder="https://github.com/..." />
-            </label>
-            <label>
-              Image URL
-              <input type="url" name="imageUrl" placeholder="https://..." />
-            </label>
-            <button class="btn btn-primary" type="submit">Add Project</button>
-          </form>
+          </div>
         </div>
       </section>
 
@@ -278,69 +185,49 @@
         <div class="section-head contact-head">
           <p class="section-pill">Contact</p>
           <h2>Get in <span class="accent-text">Touch</span></h2>
-          <p>Have a project in mind or want to connect? I'd love to hear from you.</p>
         </div>
-        <div class="contact-grid">
-          <article class="card contact-form-card">
+        <div class="contact-bento">
+          <article class="bento-item bento-form tilt-card">
             <h3>Send a Message</h3>
-            <form class="contact-form" action="#" method="post">
-              <label>
-                Name
-                <input type="text" name="name" placeholder="Your name" />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" placeholder="your.email@example.com" />
-              </label>
-              <label>
-                Message
-                <textarea name="message" rows="5" placeholder="Tell me about your project"></textarea>
-              </label>
-              <button class="btn btn-primary" type="submit">Send Message</button>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvypvad" method="post">
+              <div class="form-group">
+                <input type="text" name="name" placeholder=" " required />
+                <label>Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder=" " required />
+                <label>Email Address</label>
+              </div>
+              <div class="form-group">
+                <textarea name="message" rows="4" placeholder=" " required></textarea>
+                <label>Message</label>
+              </div>
+              <button class="btn btn-primary magnetic" type="submit">Send Message</button>
+              <p id="contactStatus" class="form-status" aria-live="polite"></p>
             </form>
           </article>
           <div class="contact-side">
-            <article class="card">
+            <article class="bento-item tilt-card">
               <h3>Contact Info</h3>
-              <p><a href="mailto:sinidiyashara16@gmail.com">sinidiyashara16@gmail.com</a></p>
-              <p><a href="tel:+94726826616">+94 72 682 6616</a></p>
-              <p>Malabe, Colombo</p>
+              <p><a href="mailto:sinidiyashara16@gmail.com" class="magnetic">sinidiyashara16@gmail.com</a></p>
+              <p><a href="tel:+94726826616" class="magnetic">+94 72 682 6616</a></p>
+              <p class="location-text">Malabe, Colombo</p>
             </article>
-            <article class="card">
-              <h3>Social Links</h3>
-              <p>
-                <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" rel="noreferrer">
-                  LinkedIn
-                </a>
-              </p>
-              <p>
-                <a href="https://www.instagram.com/sinidibalasooriya/" target="_blank" rel="noreferrer">
-                  Instagram
-                </a>
-              </p>
+            <article class="bento-item tilt-card">
+              <h3>Socials</h3>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" rel="noreferrer" class="magnetic">LinkedIn</a>
+                <a href="https://www.instagram.com/sinidibalasooriya/" target="_blank" rel="noreferrer" class="magnetic">Instagram</a>
+              </div>
             </article>
           </div>
         </div>
       </section>
     </main>
 
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-      Top
-    </button>
-
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-      <button id="lightboxClose" class="lightbox-close" aria-label="Close image">
-        Close
-      </button>
-      <img id="lightboxImage" class="lightbox-image" src="" alt="" />
-    </div>
-
     <footer class="site-footer">
       <div class="container">
-        <p>
-          <span id="year"></span> Sinidi Balasooriya. Built with focus on clarity and
-          performance.
-        </p>
+        <p><span id="year"></span> Sinidi Balasooriya. Built with modern web technologies.</p>
       </div>
     </footer>
 
