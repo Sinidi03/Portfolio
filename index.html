@@ -3,233 +3,227 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sinidi Balasooriya | Software Engineering Portfolio</title>
-    <meta name="description" content="Professional portfolio of Sinidi Balasooriya, software engineering undergraduate." />
+    <title>Sinidi Balasooriya | Software Engineering</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
-    <div class="bg-mesh" aria-hidden="true"></div>
-
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="#home" class="logo magnetic">
-          <span class="logo-mark">SB</span>
-          <span class="logo-text">Sinidi.</span>
-        </a>
+    <!-- Top Dark Section (Header + Hero) -->
+    <div class="dark-wrapper">
+      <header class="header">
+        <div class="logo magnetic">SB.</div>
         <nav class="nav">
-          <a href="#home" class="magnetic active">Home</a>
-          <a href="#about" class="magnetic">About</a>
-          <a href="#projects" class="magnetic">Projects</a>
-          <a href="#skills" class="magnetic">Skills</a>
-          <a href="#contact" class="magnetic">Contact</a>
+          <a href="#about" class="link-hover">About</a>
+          <a href="#skills" class="link-hover">Skills</a>
+          <a href="#projects" class="link-hover">Projects</a>
+          <a href="#contact" class="link-hover">Contact</a>
         </nav>
-      </div>
-    </header>
+        <a href="#contact" class="btn-connect magnetic">Let's Connect ↗</a>
+      </header>
 
-    <main id="home">
-      <section class="hero container reveal">
-        <div class="hero-layout">
-          <div class="hero-content">
-            <p class="pill availability-pill">Available for opportunities</p>
-            <h1>Hi, I'm <span class="accent-text">Sinidi Balasooriya</span></h1>
-            <h2 class="hero-title">Software Engineering Student</h2>
-            <p class="hero-text" id="typewriterText">
-              I am currently pursuing a Bachelor of Computer Science in Software
-              Engineering and building practical experience in software
-              development, testing, and data-focused systems. I am open to
-              internships and entry-level opportunities.
+      <section class="hero">
+        <div class="container hero-container">
+          <div class="hero-left reveal">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-title">Sinidi <span class="highlight-text">Balasooriya</span></h1>
+            <h2 class="hero-subtitle">Software Engineering Undergraduate</h2>
+            <p class="hero-desc">
+              Computer Science undergraduate with practical experience in software development, database management, and system testing.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary magnetic" href="#projects">View My Work</a>
-              <a class="btn btn-ghost magnetic" href="#contact">Contact Me</a>
-              <a class="btn btn-ghost magnetic" href="./assets/CV-Sinidi Balasooriya.pdf" download>
-                Download Resume
-              </a>
+              <a href="#projects" class="btn-primary magnetic">View My Work ↗</a>
+              <a href="#" class="btn-secondary magnetic">Download CV ↓</a>
+            </div>
+            <div class="socials-row">
+              <a href="https://github.com/sinidi" target="_blank" class="social-icon magnetic">GH</a>
+              <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" class="social-icon magnetic">LI</a>
+              <a href="mailto:sinidiyashara16@gmail.com" class="social-icon magnetic">EM</a>
             </div>
           </div>
-          <div class="hero-graphics">
-             <div class="hero-card tilt-card">
-               <div class="hero-card-inner">
-                 <div class="devicon-container">
-                   <i class="devicon-python-plain colored"></i>
-                   <i class="devicon-cplusplus-plain colored"></i>
-                   <i class="devicon-dart-plain colored"></i>
-                   <i class="devicon-flutter-plain colored"></i>
-                 </div>
-                 <p class="hero-card-text">Building the future,<br>one line at a time.</p>
-               </div>
-             </div>
+          <div class="hero-right reveal">
+            <!-- Glowing Orb instead of Image -->
+            <div class="orb-container">
+              <div class="glow-orb"></div>
+            </div>
           </div>
+        </div>
+        <!-- Slanted/Curved Divider -->
+        <div class="curve-divider curve-bottom">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 120H1440V0C1440 0 1140 120 720 120C300 120 0 0 0 0V120Z" fill="var(--bg-color)"/>
+          </svg>
         </div>
       </section>
+    </div>
 
-      <section id="about" class="section container reveal">
-        <div class="section-head">
-          <p class="section-pill">About</p>
-          <h2>Professional Summary</h2>
-          <p>Computer Science undergraduate with hands-on experience in software development.</p>
-        </div>
-        
-        <div class="bento-grid about-bento">
-          <div class="bento-item bento-large tilt-card">
-            <h3>Who I Am</h3>
-            <p>I am a passionate 22-year-old Computer Science undergraduate deeply interested in crafting scalable software solutions. My experience ranges from database management to front-end development and rigorous QA testing workflows. I enjoy building reliable, clean, and maintainable systems that solve real-world problems.</p>
+    <main class="light-wrapper">
+      <!-- ABOUT -->
+      <section id="about" class="section about-section">
+        <div class="container split-about reveal">
+          <div class="about-text-col">
+            <p class="section-label decorated-label">ABOUT ME</p>
+            <h2 class="section-title">Get to know me</h2>
+            <p class="about-desc">
+              Computer Science undergraduate with practical experience in software development, database management, and system testing. Proficient in SQL, Python, and C++, with hands-on experience in application development, data validation, and debugging. 
+            </p>
+            <p class="about-desc">
+              Experienced in working with relational databases, designing test cases, and ensuring system reliability. Strong analytical and problem-solving skills with the ability to work in team-based development environments.
+            </p>
           </div>
-          <div class="bento-item tilt-card bento-accent">
-            <h3 class="accent-text highlight-num">2024</h3>
-            <p>Started BCS in Software Engineering</p>
-          </div>
-          <div class="bento-item tilt-card bento-accent">
-            <h3 class="accent-text highlight-num">100%</h3>
-            <p>Commitment to Quality & Clean Code</p>
-          </div>
-          <div class="bento-item bento-wide tilt-card">
-            <h3>Core Focus Areas</h3>
-            <div class="focus-tags">
-              <span>Python</span><span>C++</span><span>Dart</span><span>SQL</span>
-              <span>Debugging</span><span>Test Case Design</span><span>Validation</span>
+          <div class="info-cards-col">
+            <div class="info-card-large">
+              <div class="info-icon icon-red">🎓</div>
+              <h3 class="info-title-large">Currently Studying</h3>
+              <p class="info-sub-large">Software Engineering</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="section container reveal">
-        <div class="section-head">
-          <p class="section-pill">Projects</p>
-          <h2>Featured Work</h2>
-          <p>Real-world academic and team projects focused on implementation quality.</p>
-        </div>
-        
-        <div class="projects-grid">
-            <article class="project-showcase-card tilt-card">
-              <div class="project-card-bg"></div>
-              <p class="project-index">01</p>
-              <h3>Parental Control System</h3>
-              <p>Team-built monitoring platform with authentication, device linking, and usage control.</p>
-              <div class="project-chip-list">
-                <span>MySQL</span><span>Python</span><span>Testing</span>
-              </div>
-            </article>
-            <article class="project-showcase-card tilt-card">
-              <div class="project-card-bg"></div>
-              <p class="project-index">02</p>
-              <h3>Word Puzzle App</h3>
-              <p>Flutter-based puzzle application focused on game logic and functionality testing.</p>
-              <div class="project-chip-list">
-                <span>Flutter</span><span>Dart</span><span>UX</span>
-              </div>
-            </article>
-            <article class="project-showcase-card tilt-card">
-              <div class="project-card-bg"></div>
-              <p class="project-index">03</p>
-              <h3>Movie Database</h3>
-              <p>SQL data management project with relational design and optimized querying.</p>
-              <div class="project-chip-list">
-                <span>SQL</span><span>Joins</span><span>DB Design</span>
-              </div>
-            </article>
-            <article class="project-showcase-card tilt-card">
-              <div class="project-card-bg"></div>
-              <p class="project-index">04</p>
-              <h3>Portfolio Website</h3>
-              <p>Modern responsive personal portfolio with interactive bento sections.</p>
-              <div class="project-chip-list">
-                <span>HTML</span><span>CSS</span><span>JS</span>
-              </div>
-            </article>
-        </div>
-      </section>
-
-      <section id="skills" class="section container reveal">
-        <div class="section-head">
-          <p class="section-pill">Skills</p>
-          <h2>My Toolbox</h2>
-          <p>Technologies I use to build robust applications.</p>
-        </div>
-        
-        <div class="bento-grid skills-bento">
-          <div class="bento-item tilt-card">
-            <h3>Languages</h3>
-            <div class="bento-tags">
-              <span>Python</span><span>C++</span><span>Dart</span><span>JavaScript</span>
+            <div class="info-card-large">
+              <div class="info-icon icon-purple">🎯</div>
+              <h3 class="info-title-large">Focused On</h3>
+              <p class="info-sub-large">Software Development & QA</p>
             </div>
-          </div>
-          <div class="bento-item tilt-card">
-            <h3>Web Dev</h3>
-            <div class="bento-tags">
-              <span>HTML5</span><span>CSS3</span><span>Node.js</span><span>Flutter Web</span>
-            </div>
-          </div>
-          <div class="bento-item tilt-card">
-            <h3>Databases</h3>
-            <div class="bento-tags">
-              <span>SQL Server</span><span>MySQL</span><span>Relational DBs</span><span>Joins</span>
-            </div>
-          </div>
-          <div class="bento-item tilt-card">
-            <h3>Tools & QA</h3>
-            <div class="bento-tags">
-              <span>Git</span><span>VS Code</span><span>Functional Testing</span><span>Debugging</span>
+            <div class="info-card-large">
+              <div class="info-icon icon-orange">🚀</div>
+              <h3 class="info-title-large">Goal</h3>
+              <p class="info-sub-large">Become a Software Engineer</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section container contact reveal">
-        <div class="section-head contact-head">
-          <p class="section-pill">Contact</p>
-          <h2>Get in <span class="accent-text">Touch</span></h2>
-        </div>
-        <div class="contact-bento">
-          <article class="bento-item bento-form tilt-card">
-            <h3>Send a Message</h3>
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvypvad" method="post">
-              <div class="form-group">
-                <input type="text" name="name" placeholder=" " required />
-                <label>Your Name</label>
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" placeholder=" " required />
-                <label>Email Address</label>
-              </div>
-              <div class="form-group">
-                <textarea name="message" rows="4" placeholder=" " required></textarea>
-                <label>Message</label>
-              </div>
-              <button class="btn btn-primary magnetic" type="submit">Send Message</button>
-              <p id="contactStatus" class="form-status" aria-live="polite"></p>
-            </form>
-          </article>
-          <div class="contact-side">
-            <article class="bento-item tilt-card">
-              <h3>Contact Info</h3>
-              <p><a href="mailto:sinidiyashara16@gmail.com" class="magnetic">sinidiyashara16@gmail.com</a></p>
-              <p><a href="tel:+94726826616" class="magnetic">+94 72 682 6616</a></p>
-              <p class="location-text">Malabe, Colombo</p>
-            </article>
-            <article class="bento-item tilt-card">
-              <h3>Socials</h3>
-              <div class="social-links">
-                <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" rel="noreferrer" class="magnetic">LinkedIn</a>
-                <a href="https://www.instagram.com/sinidibalasooriya/" target="_blank" rel="noreferrer" class="magnetic">Instagram</a>
-              </div>
-            </article>
+      <!-- SKILLS -->
+      <section id="skills" class="section skills-section">
+        <div class="container text-center reveal">
+          <p class="section-label decorated-label centered-label">MY SKILLS</p>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <div class="skills-grid">
+            <div class="skill-card"><div class="skill-icon" style="color: #3776AB;"><i class="devicon-python-plain"></i></div><p>Python</p><div class="card-line" style="background: #3776AB;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #F7DF1E;"><i class="devicon-javascript-plain"></i></div><p>JavaScript</p><div class="card-line" style="background: #F7DF1E;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #00599C;"><i class="devicon-cplusplus-plain"></i></div><p>C++</p><div class="card-line" style="background: #00599C;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #A8B9CC;"><i class="devicon-c-plain"></i></div><p>C</p><div class="card-line" style="background: #A8B9CC;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #0175C2;"><i class="devicon-dart-plain"></i></div><p>Dart</p><div class="card-line" style="background: #0175C2;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #E34F26;"><i class="devicon-html5-plain"></i></div><p>HTML</p><div class="card-line" style="background: #E34F26;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #1572B6;"><i class="devicon-css3-plain"></i></div><p>CSS</p><div class="card-line" style="background: #1572B6;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #339933;"><i class="devicon-nodejs-plain"></i></div><p>Node.js</p><div class="card-line" style="background: #339933;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #02569B;"><i class="devicon-flutter-plain"></i></div><p>Flutter</p><div class="card-line" style="background: #02569B;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #FFCA28;"><i class="devicon-firebase-plain"></i></div><p>Firebase</p><div class="card-line" style="background: #FFCA28;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #333333;"><i class="devicon-linux-plain"></i></div><p>Kali Linux</p><div class="card-line" style="background: #333333;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #1679A7;"><svg role="img" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Wireshark</title><path d="m2.95 0c-1.62 0-2.95 1.32-2.95 2.95v18.1c0 1.63 1.32 2.95 2.95 2.95h18.1c1.62 0 2.95-1.32 2.95-2.95v-18.1c-.00024-1.63-1.32-2.95-2.95-2.95zm0 1.09h18.1c1.04 0 1.85.818 1.85 1.86v14h-5.27c-.335-.796-2.57-6.47.283-10.9a.516.517 0 0 0-.443-.794c-5.24.0827-8.2 3.19-9.74 6.21-1.35 2.64-1.63 4.91-1.69 5.53h-4.95v-14c0-1.04.817-1.86 1.85-1.86zm13.6 5.24c-2.62 5.24.248 11.4.248 11.4a.516.517 0 0 0 .469.301h5.62v3.05c0 1.04-.817 1.86-1.85 1.86h-18.1c-1.04 0-1.85-.818-1.85-1.86v-3.05h5.39a.516.517 0 0 0 .514-.477s.226-2.8 1.66-5.62c1.34-2.62 3.67-5.17 7.91-5.57z"/></svg></div><p>Wireshark</p><div class="card-line" style="background: #1679A7;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #181717;"><i class="devicon-github-original"></i></div><p>GitHub</p><div class="card-line" style="background: #181717;"></div></div>
+            <div class="skill-card"><div class="skill-icon" style="color: #1BA0D7;"><svg role="img" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Cisco</title><path d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155"/></svg></div><p>Cisco PT</p><div class="card-line" style="background: #1BA0D7;"></div></div>
           </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section projects-section">
+        <div class="container text-center reveal">
+          <p class="section-label decorated-label centered-label">FEATURED PROJECTS</p>
+          <h2 class="section-title">My Recent Work</h2>
+          
+          <div class="projects-grid">
+            <div class="project-card compact-card">
+              <div class="card-header">
+                <div class="project-icon" style="background: rgba(129, 11, 56, 0.1); color: var(--accent-primary);">🛡️</div>
+                <h3>Kidora System</h3>
+              </div>
+              <p class="project-desc">Parental Control & Monitoring System featuring authentication, device linking, usage monitoring, and restriction controls.</p>
+              <div class="project-tags">
+                <span>Flutter</span><span>Node.js</span><span>SQL</span>
+              </div>
+              <div class="project-link">
+                <a href="#">View Details ↗</a>
+              </div>
+            </div>
+
+            <div class="project-card compact-card">
+              <div class="card-header">
+                <div class="project-icon" style="background: rgba(220, 195, 170, 0.3); color: #c4874f;">🎮</div>
+                <h3>Word Puzzle App</h3>
+              </div>
+              <p class="project-desc">Mobile application developed with Flutter implementing user interaction, game logic, and accurate scoring logic.</p>
+              <div class="project-tags">
+                <span>Flutter</span><span>Dart</span>
+              </div>
+              <div class="project-link">
+                <a href="#">View Details ↗</a>
+              </div>
+            </div>
+
+            <div class="project-card compact-card">
+              <div class="card-header">
+                <div class="project-icon" style="background: rgba(55, 118, 171, 0.1); color: #3776AB;">🎬</div>
+                <h3>Movie Database</h3>
+              </div>
+              <p class="project-desc">Relational database tables using SQL. Includes queries to retrieve, filter, manage structured data, and perform validation.</p>
+              <div class="project-tags">
+                <span>SQL</span><span>Relational DB</span>
+              </div>
+              <div class="project-link">
+                <a href="#">View Details ↗</a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn-primary magnetic view-all-btn">View All Projects ↗</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p><span id="year"></span> Sinidi Balasooriya. Built with modern web technologies.</p>
+    <!-- Dark Footer / Contact Section -->
+    <div class="dark-wrapper contact-wrapper">
+      <div class="curve-divider curve-top">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 0H1440V120C1440 120 1140 0 720 0C300 0 0 120 0 120V0Z" fill="var(--bg-color)"/>
+        </svg>
       </div>
-    </footer>
+      
+      <section id="contact" class="section contact-section">
+        <div class="container split-contact reveal">
+          <div class="contact-left">
+            <p class="section-label dark-mode-label">LET'S WORK TOGETHER!</p>
+            <h2 class="section-title dark-mode-title">Have a project in mind?</h2>
+            <p class="contact-desc">
+              I'm always open to discussing new projects,<br/>creative ideas or opportunities.
+            </p>
+            <div class="contact-methods">
+              <a href="mailto:sinidiyashara16@gmail.com" class="contact-method">✉️ sinidiyashara16@gmail.com</a>
+              <p class="contact-method">📍 Malabe, Colombo</p>
+            </div>
+            <div class="socials-row contact-socials">
+              <a href="https://github.com/sinidi" target="_blank" class="social-icon magnetic">GH</a>
+              <a href="https://www.linkedin.com/in/sinidi-balasooriya" target="_blank" class="social-icon magnetic">LI</a>
+              <a href="mailto:sinidiyashara16@gmail.com" class="social-icon magnetic">EM</a>
+            </div>
+          </div>
+          <div class="contact-right">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvypvad" method="post">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Your Email" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" name="subject" placeholder="Subject" required />
+              </div>
+              <div class="form-group">
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn magnetic">Send Message ↗</button>
+              <p id="contactStatus" class="status-msg"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> Sinidi Balasooriya. All Rights Reserved.</p>
+        <p class="footer-credit">Built with ❤️ and ☕</p>
+      </footer>
+    </div>
 
     <script src="./script.js"></script>
   </body>
